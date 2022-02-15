@@ -7,7 +7,6 @@ from ..freiberg_flow_stress import FreibergFlowStressCoefficients
 
 @RollPassProfile.hookimpl
 @hookutils.applies_to_materials("C45")
-@hookutils.applies_to_materials("C55")
 def freiberg_flow_stress_coefficients(profile):
     return FreibergFlowStressCoefficients(
         a=4936.26,

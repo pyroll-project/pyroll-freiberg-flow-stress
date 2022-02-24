@@ -10,7 +10,7 @@ from pyroll import RollPass, RollPassProfile
 @dataclass
 class FreibergFlowStressCoefficients:
     """
-    Class representing the freiberger flow stress model published by Hensel et al.
+    Class representing the Freiberg flow stress model published by Hensel et al.
     """
     a: Optional[float] = 0
     m1: Optional[float] = 0
@@ -30,6 +30,10 @@ class FreibergFlowStressCoefficients:
 @RollPassProfile.hookimpl
 def flow_stress(roll_pass: RollPass, profile: RollPassProfile):
     coefficients = profile.freiberg_flow_stress_coefficients
+
+    if not coefficients:
+        return None
+
     strain = profile.strain + coefficients.baseStrain
     strain_rate = roll_pass.strain_rate + coefficients.baseStrainRate
     temperature = profile.temperature - 273.15

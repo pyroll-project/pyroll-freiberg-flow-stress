@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyroll-freiberg-flow-stress"
-version = "0.1.0"
+version = "0.2.0"
 description = "Plugin for PyRoll providing Freiberg flow stress approach and material database"
 authors = [
     "Matthias Schmidtchen <matthias.schmidtchen@imf.tu-freiberg.de>",
@@ -12,7 +12,7 @@ license = "GPL-3.0-only"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.11"
-pyroll = "^0.3.0"
+pyroll = "^0.4.0"
 numpy = "^1.22.2"
 
 [tool.poetry.dev-dependencies]

@@ -9,7 +9,7 @@ from ..freiberg_flow_stress import FreibergFlowStressCoefficients
 @hookutils.applies_to_materials("C45")
 def freiberg_flow_stress_coefficients(profile):
     return FreibergFlowStressCoefficients(
-        a=4936.26,
+        a=4936.26 * 1e6,
         m1=-0.00284749,
         m2=0.230591,
         m4=0.0007177260,

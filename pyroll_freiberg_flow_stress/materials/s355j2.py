@@ -9,7 +9,7 @@ from ..freiberg_flow_stress import FreibergFlowStressCoefficients
 @hookutils.applies_to_materials("S355J2")
 def freiberg_flow_stress_coefficients(profile):
     return FreibergFlowStressCoefficients(
-        a=2852.66,
+        a=2852.66 * 1e6,
         m1=-0.00244,
         m2=0.41934,
         m4=0.00088,

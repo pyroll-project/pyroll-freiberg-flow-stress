@@ -15,6 +15,10 @@ the flow stress function. The hook function must return an instance of the `Frei
 The constructor takes in addition to the coefficients the base values for strain and strain rate to prevent zero flow
 stress.
 
+> The unit of the returned flow stress depends solely on the value of $`A`$. 
+> Choose the unit of $`A`$ in that way, that the function returns flow stress in Pa (SI unit).
+> Coefficient sets found in literature often return flow stress in MPa, fix that by multiplying $`A`$ by `1e6`.
+
 For a few common materials hooks delivering coefficients are implemented. Those implementations ask for a `material`
 attribute on the profile, being a string for material identification. The following materials are implemented (
 case-insensitive):

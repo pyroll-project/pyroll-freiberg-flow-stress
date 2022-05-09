@@ -5,16 +5,16 @@ from ..freiberg_flow_stress import FreibergFlowStressCoefficients
 
 
 @RollPass.Profile.hookimpl
-@for_materials("S355J2")
+@for_materials("C45")
 def freiberg_flow_stress_coefficients(profile):
     return FreibergFlowStressCoefficients(
-        a=2852.66 * 1e6,
-        m1=-0.00244,
-        m2=0.41934,
-        m4=0.00088,
-        m5=-0.00149,
-        m7=0.12169,
-        m8=0.000127,
+        a=3268.49 * 1e6,
+        m1=-0.00267855,
+        m2=0.34446,
+        m4=0.000551814,
+        m5=-0.00132042,
+        m7=0.0166334,
+        m8=0.000149907,
         baseStrain=0.1,
         baseStrainRate=0.1
     )

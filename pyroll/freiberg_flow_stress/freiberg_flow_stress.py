@@ -3,7 +3,8 @@ from typing import Optional
 
 from numpy import exp
 
-from pyroll import RollPass, for_materials
+from pyroll.core import RollPass
+from pyroll.utils import for_materials
 
 
 @dataclass

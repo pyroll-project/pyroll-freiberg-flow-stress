@@ -1,4 +1,4 @@
-from pyroll import RollPass, for_materials
+from pyroll.core import RollPass
 
 from . import hookspecs
 

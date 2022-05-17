@@ -1,7 +1,6 @@
 import numpy as np
 
-from pyroll_freiberg_flow_stress.freiberg_flow_stress import flow_stress
-from pyroll_freiberg_flow_stress.materials.c45 import freiberg_flow_stress_coefficients
+from pyroll.freiberg_flow_stress.freiberg_flow_stress import flow_stress, FreibergFlowStressCoefficients
 
 
 class DummyProfile:
@@ -9,7 +8,17 @@ class DummyProfile:
         self.strain = 1
         self.temperature = 1200
         self.material = "C45"
-        self.freiberg_flow_stress_coefficients = freiberg_flow_stress_coefficients(self)
+        self.freiberg_flow_stress_coefficients = FreibergFlowStressCoefficients(
+            a=3268.49 * 1e6,
+            m1=-0.00267855,
+            m2=0.34446,
+            m4=0.000551814,
+            m5=-0.00132042,
+            m7=0.0166334,
+            m8=0.000149907,
+            baseStrain=0.1,
+            baseStrainRate=0.1
+        )
 
 
 class DummyRollPass:

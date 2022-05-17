@@ -1,5 +1,5 @@
-from pyroll_freiberg_flow_stress import FreibergFlowStressCoefficients
-from pyroll import RollPass, Roll, Profile, RoundGroove
+from pyroll.freiberg_flow_stress import FreibergFlowStressCoefficients
+from pyroll.core import RollPass, Roll, Profile, RoundGroove
 
 
 def test_register_coefficients():

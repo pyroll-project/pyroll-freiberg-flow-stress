@@ -1,6 +1,4 @@
-import sys
-
-from pyroll import RollPass
+from pyroll.core import RollPass
 
 
 @RollPass.Profile.hookspec

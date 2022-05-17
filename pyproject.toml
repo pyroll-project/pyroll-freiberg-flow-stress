@@ -7,6 +7,9 @@ authors = [
     "Christoph Renzing <christoph.renzing@imf.tu-freiberg.de>"
 ]
 license = "BSD-3-Clause"
+packages = [
+    { include = "pyroll" }
+]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.11"
@@ -14,7 +17,7 @@ pyroll = "^1.0.0"
 numpy = "^1.22.2"
 
 [tool.poetry.dev-dependencies]
-pyroll = { path = "pyroll-core", develop = true }
+pyroll = { git = "https://github.com/pyroll-project/pyroll-core.git", branch = "main", develop = true }
 pytest = "^7.0.0"
 
 [build-system]

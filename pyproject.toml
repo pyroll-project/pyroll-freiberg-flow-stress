@@ -10,6 +10,13 @@ license = "BSD-3-Clause"
 packages = [
     { include = "pyroll" }
 ]
+readme = "README.md"
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Manufacturing",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering"
+]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.11"

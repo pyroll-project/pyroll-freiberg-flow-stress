@@ -30,7 +30,7 @@ class FreibergFlowStressCoefficients:
         """
         Utility function that registers a hookimpl delivering this instance for the specified ``material`` key.
 
-        :param material: they material key, for which the hookimpl should apply (see :py:func:`pyroll.for_materials`)
+        :param material: the material key, for which the hookimpl should apply (see :py:func:`pyroll.for_materials`)
 
         :returns: The cannonical name of the created plugin,
             as returned by ``RollPass.Profile.plugin_manager.register()``
@@ -48,16 +48,19 @@ class FreibergFlowStressCoefficients:
         return RollPass.Profile.plugin_manager.register(ns)
 
 
-@RollPass.Profile.hookimpl
-def flow_stress(roll_pass: RollPass, profile: RollPass.Profile):
-    if not hasattr(profile, "freiberg_flow_stress_coefficients"):
-        return None
+def flow_stress(coefficients: FreibergFlowStressCoefficients, strain: float, strain_rate: float, temperature: float):
+    """
+    Calculates the flow stress according to the model from the provided coefficients, strain, strain rate and temperature.
 
-    coefficients = profile.freiberg_flow_stress_coefficients
+    :param coefficients: the coefficients set to use
+    :param strain: the equivalent strain experienced
+    :param strain_rate: the equivalent strain rate experienced
+    :param temperature: the absolute temperature of the material (K)
+    """
 
-    strain = profile.strain + coefficients.baseStrain
-    strain_rate = roll_pass.strain_rate + coefficients.baseStrainRate
-    temperature = profile.temperature - 273.15
+    strain += coefficients.baseStrain
+    strain_rate += coefficients.baseStrainRate
+    temperature -= 273.15
     return (coefficients.a * exp(coefficients.m1 * temperature) * (strain ** coefficients.m2) *
             (strain_rate ** coefficients.m3) * exp(coefficients.m4 / strain) *
             ((1 + strain) ** (coefficients.m5 * temperature)) *

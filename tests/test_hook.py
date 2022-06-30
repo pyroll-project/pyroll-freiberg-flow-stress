@@ -1,6 +1,7 @@
 import numpy as np
 
-from pyroll.freiberg_flow_stress.freiberg_flow_stress import flow_stress, FreibergFlowStressCoefficients
+from pyroll.freiberg_flow_stress.freiberg_flow_stress import FreibergFlowStressCoefficients
+from pyroll.freiberg_flow_stress.hookimpls import flow_stress
 
 
 class DummyProfile:

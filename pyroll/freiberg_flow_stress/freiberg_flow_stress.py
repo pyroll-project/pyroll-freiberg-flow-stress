@@ -58,9 +58,9 @@ def flow_stress(coefficients: FreibergFlowStressCoefficients, strain: float, str
     :param temperature: the absolute temperature of the material (K)
     """
 
-    strain += coefficients.baseStrain
-    strain_rate += coefficients.baseStrainRate
-    temperature -= 273.15
+    strain = strain + coefficients.baseStrain
+    strain_rate = strain_rate + coefficients.baseStrainRate
+    temperature = temperature - 273.15
     return (coefficients.a * exp(coefficients.m1 * temperature) * (strain ** coefficients.m2) *
             (strain_rate ** coefficients.m3) * exp(coefficients.m4 / strain) *
             ((1 + strain) ** (coefficients.m5 * temperature)) *

@@ -1,4 +1,3 @@
-from numpy import exp
 from pyroll.core import RollPass
 from . import freiberg_flow_stress
 

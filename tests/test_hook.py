@@ -1,7 +1,9 @@
+import weakref
+
 import numpy as np
 
 from pyroll.freiberg_flow_stress.freiberg_flow_stress import FreibergFlowStressCoefficients, flow_stress
-from pyroll.freiberg_flow_stress.hookimpls import flow_stress as hook
+from pyroll.freiberg_flow_stress import freiberg_flow_stress as hook
 
 strain = 1
 strain_rate = 1
@@ -35,21 +37,22 @@ class DummyRollPass:
 def test_hook():
     rp = DummyRollPass()
     p = DummyProfile()
+    p.roll_pass = weakref.ref(rp)
     print()
 
-    fs = hook(rp, p)
+    fs = hook(p)
     print(fs)
     assert np.isfinite(fs)
     assert fs == flow_stress(coefficients, strain, strain_rate, temperature)
 
     rp.strain_rate = 0
-    fs = hook(rp, p)
+    fs = hook(p)
     print(fs)
     assert np.isfinite(fs)
     assert fs == flow_stress(coefficients, strain, 0, temperature)
 
     p.strain = 0
-    fs = hook(rp, p)
+    fs = hook(p)
     print(fs)
     assert np.isfinite(fs)
     assert fs == flow_stress(coefficients, 0, 0, temperature)

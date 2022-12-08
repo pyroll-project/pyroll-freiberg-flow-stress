@@ -3,9 +3,6 @@ from typing import Optional
 
 from numpy import exp
 
-from pyroll.core import RollPass
-from pyroll.utils import for_materials
-
 
 @dataclass
 class FreibergFlowStressCoefficients:
@@ -25,27 +22,6 @@ class FreibergFlowStressCoefficients:
 
     baseStrain: Optional[float] = 0.1
     baseStrainRate: Optional[float] = 0.1
-
-    def register(self, material: str) -> str:
-        """
-        Utility function that registers a hookimpl delivering this instance for the specified ``material`` key.
-
-        :param material: the material key, for which the hookimpl should apply (see :py:func:`pyroll.for_materials`)
-
-        :returns: The cannonical name of the created plugin,
-            as returned by ``RollPass.Profile.plugin_manager.register()``
-        """
-
-        @RollPass.Profile.hookimpl
-        @for_materials(material)
-        def freiberg_flow_stress_coefficients(profile):
-            return self
-
-        ns = type(f"FreibergFlowStressCoefficients_{material}", (), {
-            "freiberg_flow_stress_coefficients": freiberg_flow_stress_coefficients
-        })
-
-        return RollPass.Profile.plugin_manager.register(ns)
 
 
 def flow_stress(coefficients: FreibergFlowStressCoefficients, strain: float, strain_rate: float, temperature: float):

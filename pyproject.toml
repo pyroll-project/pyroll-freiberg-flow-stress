@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyroll-freiberg-flow-stress"
-version = "2.0.0a"
+version = "2.0.0a1"
 description = "Plugin for PyRoll providing Freiberg flow stress approach and material database."
 authors = [
     "Max Weiner <max.weiner@imf.tu-freiberg.de>",
@@ -20,10 +20,9 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
-pyroll = "^2.0.0a"
+pyroll-core = "^2.0.0a"
 
 [tool.poetry.dev-dependencies]
-pyroll = { git = "https://github.com/pyroll-project/pyroll-core.git", branch = "main", develop = true }
 pytest = "^7.0.0"
 
 [build-system]

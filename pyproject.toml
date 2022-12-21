@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyroll-freiberg-flow-stress"
-version = "2.0.0a1"
+version = "2.0.0a1-1"
 description = "Plugin for PyRoll providing Freiberg flow stress approach and material database."
 authors = [
     "Max Weiner <max.weiner@imf.tu-freiberg.de>",

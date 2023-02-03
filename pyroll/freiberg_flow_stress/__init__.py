@@ -3,6 +3,8 @@ from pyroll.core.hooks import Hook
 
 from .freiberg_flow_stress import FreibergFlowStressCoefficients, flow_stress
 
+VERSION = "2.0.0b"
+
 Profile.freiberg_flow_stress_coefficients = Hook[FreibergFlowStressCoefficients]()
 
 

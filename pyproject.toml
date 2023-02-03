@@ -1,14 +1,13 @@
-[tool.poetry]
+[project]
 name = "pyroll-freiberg-flow-stress"
-version = "2.0.0a1-1"
 description = "Plugin for PyRoll providing Freiberg flow stress approach and material database."
 authors = [
-    "Max Weiner <max.weiner@imf.tu-freiberg.de>",
-    "Christoph Renzing <christoph.renzing@imf.tu-freiberg.de>"
+    { name = "Max Weiner", email = "max.weiner@imf.tu-freiberg.de" },
+    { name = "Christoph Renzing", email = "christoph.renzing@imf.tu-freiberg.de" }
 ]
 license = "BSD-3-Clause"
 packages = [
-    { include = "pyroll" }
+    { include = "pyroll/freiberg_flow_stress" }
 ]
 readme = "README.md"
 classifiers = [
@@ -18,13 +17,11 @@ classifiers = [
     "Topic :: Scientific/Engineering"
 ]
 
-[tool.poetry.dependencies]
-python = ">=3.9,<4.0"
-pyroll-core = "^2.0.0a"
+requires-python = ">=3.9, <4.0"
+dependencies = ["pyroll-core ~= 2.0.0b"]
 
-[tool.poetry.dev-dependencies]
-pytest = "^7.0.0"
+dynamic = ["version"]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

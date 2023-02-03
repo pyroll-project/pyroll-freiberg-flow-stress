@@ -45,6 +45,7 @@ def test_hook():
     assert np.isfinite(fs)
     assert fs == flow_stress(coefficients, strain, strain_rate, temperature)
 
+
     rp.strain_rate = 0
     fs = hook(p)
     print(fs)

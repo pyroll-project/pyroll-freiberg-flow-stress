@@ -17,16 +17,10 @@ dependencies = [
 [envs.docs]
 path = ""
 dependencies = [
-    "matplotlib",
-    "pygments ~= 2.0",
-    "pytask ~= 0.2.0",
-    "pytask_latex ~= 0.2.0",
-    "jinja2",
-    "toml"
 ]
 
 [envs.docs.scripts]
-build = "latexmk --cd --pdf --shell-escape docs/docs" # compile LaTeX docs with latexmk
+build = "pandoc -o docs/docs.pdf docs/docs.md"
 
 [envs.test]
 path = ""

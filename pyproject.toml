@@ -18,9 +18,14 @@ classifiers = [
 ]
 
 requires-python = ">=3.9, <4.0"
-dependencies = ["pyroll-core ~= 2.0.0b"]
+dependencies = ["pyroll-core ~= 2.0.0b3"]
 
 dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://pyroll-project.github.io"
+Repository = "https://github.com/pyroll-project/pyroll-freiberg-flow-stress"
+Documentation = "https://github.com/pyroll-project/pyroll-freiberg-flow-stress/blob/main/docs/docs.pdf"
 
 [build-system]
 requires = ["hatchling"]

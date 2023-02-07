@@ -9,7 +9,7 @@ class FreibergFlowStressCoefficients:
     """
     Class representing the Freiberg flow stress model published by Hensel et al.
     """
-    a: Optional[float] = 0
+    a: Optional[float]
     m1: Optional[float] = 0
     m2: Optional[float] = 0
     m3: Optional[float] = 0

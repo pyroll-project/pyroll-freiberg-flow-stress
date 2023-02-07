@@ -37,14 +37,13 @@ class DummyRollPass:
 def test_hook():
     rp = DummyRollPass()
     p = DummyProfile()
-    p.roll_pass = weakref.ref(rp)
+    p.roll_pass = rp
     print()
 
     fs = hook(p)
     print(fs)
     assert np.isfinite(fs)
     assert fs == flow_stress(coefficients, strain, strain_rate, temperature)
-
 
     rp.strain_rate = 0
     fs = hook(p)

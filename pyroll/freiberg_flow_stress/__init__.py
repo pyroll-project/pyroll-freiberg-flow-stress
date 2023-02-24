@@ -2,7 +2,7 @@ from pyroll.core import Profile, RollPass, Hook
 
 from .freiberg_flow_stress import FreibergFlowStressCoefficients, flow_stress
 
-VERSION = "2.0.0b"
+VERSION = "2.0"
 
 Profile.freiberg_flow_stress_coefficients = Hook[FreibergFlowStressCoefficients]()
 

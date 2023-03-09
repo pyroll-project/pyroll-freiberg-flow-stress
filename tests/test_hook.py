@@ -37,7 +37,7 @@ class DummyRollPass:
 def test_hook():
     rp = DummyRollPass()
     p = DummyProfile()
-    p.roll_pass = rp
+    p.unit = rp
     print()
 
     fs = hook(p)

@@ -6,9 +6,6 @@ authors = [
     { name = "Christoph Renzing", email = "christoph.renzing@imf.tu-freiberg.de" }
 ]
 license = "BSD-3-Clause"
-packages = [
-    { include = "pyroll/freiberg_flow_stress" }
-]
 readme = "README.md"
 classifiers = [
     "Intended Audience :: Science/Research",
@@ -17,7 +14,7 @@ classifiers = [
     "Topic :: Scientific/Engineering"
 ]
 
-requires-python = ">=3.9, <4.0"
+requires-python = ">=3.9"
 dependencies = [
     "pyroll-core ~= 2.0"
 ]
@@ -25,7 +22,7 @@ dependencies = [
 dynamic = ["version"]
 
 [project.urls]
-Homepage = "https://pyroll-project.github.io"
+Homepage = "https://pyroll.readthedocs.io"
 Repository = "https://github.com/pyroll-project/pyroll-freiberg-flow-stress"
 Documentation = "https://github.com/pyroll-project/pyroll-freiberg-flow-stress/blob/main/docs/docs.pdf"
 

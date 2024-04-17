@@ -19,6 +19,11 @@ dependencies = [
     "pyroll-core ~= 2.0"
 ]
 
+[project.optional-dependencies]
+pillar-model = [
+    "pyroll-pillar-model ~= 2.0",
+]
+
 dynamic = ["version"]
 
 [project.urls]

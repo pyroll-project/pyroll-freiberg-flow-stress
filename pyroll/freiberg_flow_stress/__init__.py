@@ -1,6 +1,7 @@
+import numpy as np
 import importlib.util
 
-from pyroll.core import Profile, DeformationUnit, Hook, DiskElementUnit
+from pyroll.core import Profile, DeformationUnit, Hook, DiskElementUnit, RollPass
 
 
 from .freiberg_flow_stress import FreibergFlowStressCoefficients, flow_stress
@@ -46,10 +47,16 @@ try:
         if hasattr(self, "freiberg_flow_stress_coefficients"):
             return flow_stress(
                 self.freiberg_flow_stress_coefficients,
-                self.unit.pillar_strains,
+                self.pillar_strains,
                 self.unit.pillar_strain_rates,
                 self.temperature
             )
+
+    def initial_values(self: RollPass):
+        from pyroll.pillar_model import Config
+        self.in_profile.pillar_strains = np.full(Config.PILLAR_COUNT, 0.1)
+
+    RollPass.additional_inits.append(initial_values)
 
 except AttributeError:
     pass  # pillar_model not loaded

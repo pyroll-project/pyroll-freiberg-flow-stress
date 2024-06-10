@@ -18,7 +18,7 @@ def pillar_spreads(self: RollPass.DiskElement):
 
 
 DISK_ELEMENT_COUNT = 30
-pyroll.pillar_model.Config.PILLAR_COUNT = 100
+pyroll.pillar_model.Config.PILLAR_COUNT = 15
 
 
 @pytest.mark.skipif(not pyroll.freiberg_flow_stress.PILLAR_MODEL_INSTALLED, reason="Pillar model is not installed.")

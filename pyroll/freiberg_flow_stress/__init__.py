@@ -54,7 +54,7 @@ try:
 
     def initial_values(self: RollPass):
         from pyroll.pillar_model import Config
-        self.in_profile.pillar_strains = np.full(Config.PILLAR_COUNT, 0.1)
+        self.in_profile.pillar_strains = np.zeros(Config.PILLAR_COUNT)
 
     RollPass.additional_inits.append(initial_values)
 

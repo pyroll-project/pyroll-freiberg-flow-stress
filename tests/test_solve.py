@@ -58,12 +58,3 @@ def test_solve(tmp_path: Path, caplog):
         print(caplog.text)
 
     assert sequence[0].in_profile.has_cached("freiberg_flow_stress_coefficients")
-
-    try:
-        from pyroll.report import report
-        report = report(sequence)
-        f = tmp_path / "report.html"
-        f.write_text(report)
-        webbrowser.open(f.as_uri())
-    except ImportError:
-        pass

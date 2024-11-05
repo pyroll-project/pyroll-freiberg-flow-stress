@@ -6,7 +6,6 @@ import webbrowser
 import pyroll.core
 import pyroll.pillar_model
 import pyroll.freiberg_flow_stress
-import pyroll.local_velocity
 
 from pathlib import Path
 from pyroll.core import Profile, PassSequence, RollPass, Roll, CircularOvalGroove, Transport, RoundGroove

@@ -22,7 +22,7 @@ dynamic = ["version"]
 
 [project.optional-dependencies]
 pillar-model = [
-    "pyroll-pillar-model ~= 2.1",
+    "pyroll-pillar-model ~= 3.0",
 ]
 
 

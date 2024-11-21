@@ -55,3 +55,41 @@ def s355j2(self: Profile):
             baseStrain=0.1,
             baseStrainRate=0.1
         )
+
+
+@Profile.freiberg_flow_stress_coefficients
+def bst500(self: Profile):
+    if is_material(self, {"bst500"}):
+        return FreibergFlowStressCoefficients(
+            a=4877.12 * 1e6,
+            m1=-0.00273339,
+            m2=0.302309,
+            m3=-0.0407581,
+            m4=0.000222222,
+            m5=-0.000383134,
+            m6=0,
+            m7=-0.492672,
+            m8=0.000175044,
+            m9=-0.0611783,
+            baseStrain=0.1,
+            baseStrainRate=0.1
+        )
+
+
+@Profile.freiberg_flow_stress_coefficients
+def b10(self: Profile):
+    if is_material(self, {"b10"}):
+        return FreibergFlowStressCoefficients(
+            a=1.35811e-26 * 1e6,
+            m1=-0.0135233,
+            m2=0.245957,
+            m3=-0.00563503,
+            m4=0.000133515,
+            m5=-0.000395507,
+            m6=0,
+            m7=-0.387438,
+            m8=0.000146131,
+            m9=11.3409,
+            baseStrain=0.1,
+            baseStrainRate=0.1
+        )

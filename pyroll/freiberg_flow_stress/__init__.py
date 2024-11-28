@@ -6,7 +6,7 @@ from pyroll.core import Profile, DeformationUnit, Hook, DiskElementUnit, RollPas
 
 from .freiberg_flow_stress import FreibergFlowStressCoefficients, flow_stress
 
-VERSION = "3.0.1"
+VERSION = "3.0.1post0"
 
 REPORT_INSTALLED = bool(importlib.util.find_spec("pyroll.report"))
 PILLAR_MODEL_INSTALLED = bool(importlib.util.find_spec("pyroll.pillar_model"))

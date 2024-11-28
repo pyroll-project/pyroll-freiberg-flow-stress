@@ -10,7 +10,10 @@ def is_material(profile: Profile, materials: set[str]):
 
 
 @Profile.freiberg_flow_stress_coefficients
-def c20(self: Profile):
+def _c20(self: Profile):
+    """
+    Coefficients published in Numerical data and functional relationships in science and technology. Part 1: Metal forming data Ferrous alloys, T. Spittel, M. Spittel, 2009, Springer, Berlin Heidelberg, ISBN 978-3-540-44758-0
+    """
     if is_material(self, {"c20", "c22"}):
         return FreibergFlowStressCoefficients(
             a=3304.39 * 1e6,
@@ -26,7 +29,10 @@ def c20(self: Profile):
 
 
 @Profile.freiberg_flow_stress_coefficients
-def c45(self: Profile):
+def _c45(self: Profile):
+    """
+    Coefficients published in Numerical data and functional relationships in science and technology. Part 1: Metal forming data Ferrous alloys, T. Spittel, M. Spittel, 2009, Springer, Berlin Heidelberg, ISBN 978-3-540-44758-0
+    """
     if is_material(self, {"c45"}):
         return FreibergFlowStressCoefficients(
             a=3268.49 * 1e6,
@@ -42,7 +48,10 @@ def c45(self: Profile):
 
 
 @Profile.freiberg_flow_stress_coefficients
-def s355j2(self: Profile):
+def _s355j2(self: Profile):
+    """
+    Coefficients published in Numerical data and functional relationships in science and technology. Part 1: Metal forming data Ferrous alloys, T. Spittel, M. Spittel, 2009, Springer, Berlin Heidelberg, ISBN 978-3-540-44758-0
+    """
     if is_material(self, {"s355j2"}):
         return FreibergFlowStressCoefficients(
             a=2852.66 * 1e6,
@@ -58,7 +67,10 @@ def s355j2(self: Profile):
 
 
 @Profile.freiberg_flow_stress_coefficients
-def bst500(self: Profile):
+def _bst500(self: Profile):
+    """
+    Coefficients measured at Institute of Metal Forming, TU Bergakademie Freiberg, Freiberg in 2022
+    """
     if is_material(self, {"bst500"}):
         return FreibergFlowStressCoefficients(
             a=4877.12 * 1e6,
@@ -77,7 +89,10 @@ def bst500(self: Profile):
 
 
 @Profile.freiberg_flow_stress_coefficients
-def b10(self: Profile):
+def _b10(self: Profile):
+    """
+    Coefficients measured at Institute of Metal Forming, TU Bergakademie Freiberg, Freiberg in 2022
+    """
     if is_material(self, {"b10"}):
         return FreibergFlowStressCoefficients(
             a=1.35811e-26 * 1e6,
@@ -90,6 +105,28 @@ def b10(self: Profile):
             m7=-0.387438,
             m8=0.000146131,
             m9=11.3409,
+            baseStrain=0.1,
+            baseStrainRate=0.1
+        )
+
+
+@Profile.freiberg_flow_stress_coefficients
+def _11MnS30(self: Profile):
+    """
+    Coefficients published in Numerical data and functional relationships in science and technology. Part 1: Metal forming data Ferrous alloys, T. Spittel, M. Spittel, 2009, Springer, Berlin Heidelberg, ISBN 978-3-540-44758-0
+    """
+    if is_material(self, {"11MnS30"}):
+        return FreibergFlowStressCoefficients(
+            a=1473.43 * 1e6,
+            m1=-0.00239,
+            m2=0.22924,
+            m3=0,
+            m4=-0.00870,
+            m5=0.00010,
+            m6=0,
+            m7=-0.44065,
+            m8=0.000161,
+            m9=0,
             baseStrain=0.1,
             baseStrainRate=0.1
         )
